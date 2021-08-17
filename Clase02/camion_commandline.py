@@ -8,11 +8,9 @@ def costo_camion(nombre_archivo):
     f = csv.reader(open(nombre_archivo, 'rt'), delimiter=',')
     header = next(f)
     for row in f:
-        costo_cajones = int(row[1]) * float(row[2])
-        costo = costo + costo_cajones
+        costo += int(row[1]) * float(row[2])
     return costo
-#    print("Costo total del camion: $", total, sep='')
-
+    
 if len(sys.argv) == 2:
     nombre_archivo = sys.argv[1]
 else:
