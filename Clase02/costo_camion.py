@@ -7,8 +7,7 @@ costo = 0
 f = csv.reader(open('camion.csv', 'rt'), delimiter=',')
 header = next(f)
 for row in f:
-    costo_cajones = int(row[1]) * float(row[2])
-    costo = costo + costo_cajones
+    costo += int(row[1]) * float(row[2])
 
 print('Costo total:', costo)
 
