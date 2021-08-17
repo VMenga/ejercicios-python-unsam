@@ -9,5 +9,3 @@ def leer_camion(arg):
 
 def leer_precios(arg):
     pass
-
-    
