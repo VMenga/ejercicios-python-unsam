@@ -15,18 +15,33 @@ def leer_camion(archivo_camion):
         camion.append(dicc)
     return camion
 
-'''
 def leer_precios(archivo_precios):
     precios = csv.reader(open(archivo_precios, 'rt'), delimiter=',')
-    venta_fruta = 0
-    for linea in precios:
-        venta_fruta = linea[1]
-    pass
+    precio = []
+    dicc2 = {}
+    for row in precios:
+        if len(row) != 0:
+            dicc2['nombre'] = str(row[0])
+            dicc2['precio'] = float(row[1])
+            precio.append(dicc2)
+        else:
+            continue
+    return precio
 
-'''
-camion = leer_camion('camion.csv')
-total = 0
+
+if len(sys.argv) == 3:
+    nombre_archivo = sys.argv[1]
+    archivo_precios = sys.argv[2]
+else:
+    nombre_archivo = input("Ingrese ruta del archivo camion.csv: ")
+    archivo_precios = input("Ingrese ruta del archivo precios.csv: ")
+
+camion = leer_camion(nombre_archivo)
+total_camion = 0
+total_entrada = 0
+neto = 0
+
 for s in camion:
-    total += s['cajones']*s['precio']
+    total_camion += s['cajones']*s['precio']
 
-print(total)
+print("Costo total del camion: $", total_camion, sep='')
