@@ -3,6 +3,7 @@
 import csv
 import sys
 
+#Esta funcion crea una lista de diccionarios con el stock
 def leer_camion(archivo_camion):
     camion = []
     f = csv.reader(open(archivo_camion, 'rt'), delimiter=',')
@@ -15,6 +16,7 @@ def leer_camion(archivo_camion):
         camion.append(dicc)
     return camion
 
+#Esta funcion crea un diccionario con los precios por nombre de fruta
 def leer_precios(archivo_precios):
     p = csv.reader(open(archivo_precios, 'rt'), delimiter=',')
     precios = {}
@@ -25,13 +27,14 @@ def leer_precios(archivo_precios):
             continue
     return precios
 
-
+#Esta condicion chequea si los archivos csv estan incluidos como argumento en el comando
 if len(sys.argv) == 3:
     nombre_archivo = sys.argv[1]
     archivo_precios = sys.argv[2]
 else:
     nombre_archivo = input("Ingrese ruta del archivo camion.csv: ")
     archivo_precios = input("Ingrese ruta del archivo precios.csv: ")
+
 
 camion = leer_camion(nombre_archivo)
 precios = leer_precios(archivo_precios)
