@@ -4,14 +4,18 @@ import csv
 import sys
 
 def leer_camion(archivo_camion):
-    costo_camion = 0
+    camion = []
+    dicc = {}
     f = csv.reader(open(archivo_camion, 'rt'), delimiter=',')
     header = next(f)
     for row in f:
-        costo_camion += int(row[1]) * float(row[2])
-    return costo_camion
+        dicc['nombre'] = str(row[0])
+        dicc['cajones'] = int(row[1])
+        dicc['precio'] = float(row[2])
+        camion.append(dicc)
+    return camion
 
-
+'''
 def leer_precios(archivo_precios):
     precios = csv.reader(open(archivo_precios, 'rt'), delimiter=',')
     venta_fruta = 0
@@ -19,6 +23,10 @@ def leer_precios(archivo_precios):
         venta_fruta = linea[1]
     pass
 
-
-for s in costo_camion:
+'''
+camion = leer_camion('camion.csv')
+total = 0
+for s in camion:
     total += s['cajones']*s['precio']
+
+print(total)
