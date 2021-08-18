@@ -1,10 +1,5 @@
 #informe.py
 #Por Valentin Mengascini
-
-#Solo anda la funcionalidad de crear el diccionario
-#del costo de camion, la de crear el dicc de leer_precios
-#Solo devuelve el ultimo valor repetidas veces y no encontre el problema
-
 import csv
 import sys
 
@@ -22,17 +17,13 @@ def leer_camion(archivo_camion):
 
 def leer_precios(archivo_precios):
     p = csv.reader(open(archivo_precios, 'rt'), delimiter=',')
-    precio = []
-
+    precios = {}
     for row in p:
         if len(row) != 0:
-            dicc2 = {}
-            dicc2['nombre'] = str(row[0])
-            dicc2['precio'] = float(row[1])
-            precio.append(dicc2)
+            precios[str(row[0])] = float(row[1])
         else:
             continue
-    return precio
+    return precios
 
 
 if len(sys.argv) == 3:
@@ -43,12 +34,24 @@ else:
     archivo_precios = input("Ingrese ruta del archivo precios.csv: ")
 
 camion = leer_camion(nombre_archivo)
+precios = leer_precios(archivo_precios)
 total_camion = 0
 total_entrada = 0
 neto = 0
 
+#Costo del camion
 for s in camion:
     total_camion += s['cajones']*s['precio']
-
-
 print("Costo total del camion: $", total_camion, sep = '')
+
+#Total de ventas
+for s in camion:
+    total_entrada += s['cajones']*precios[s['nombre']]
+print("Total de facturacion: $", total_entrada, sep='')
+
+#Ganancia o perdida
+neto = total_entrada - total_camion
+if neto >= 0:
+    print("La ganancia total fue de : $", round(neto, 2), sep='')
+else:
+    print("Hubo una perdida de : $", round(-neto, 2), sep='')
