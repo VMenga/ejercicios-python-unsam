@@ -1,5 +1,10 @@
 #informe.py
 #Por Valentin Mengascini
+
+#Solo anda la funcionalidad de crear el diccionario
+#del costo de camion, la de crear el dicc de leer_precios
+#Solo devuelve el ultimo valor repetidas veces y no encontre el problema
+
 import csv
 import sys
 
@@ -43,5 +48,6 @@ neto = 0
 
 for s in camion:
     total_camion += s['cajones']*s['precio']
+
 
 print("Costo total del camion: $", total_camion, sep='')
