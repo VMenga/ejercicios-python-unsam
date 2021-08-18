@@ -10,10 +10,10 @@ import sys
 
 def leer_camion(archivo_camion):
     camion = []
-    dicc = {}
     f = csv.reader(open(archivo_camion, 'rt'), delimiter=',')
     header = next(f)
     for row in f:
+        dicc = {}
         dicc['nombre'] = str(row[0])
         dicc['cajones'] = int(row[1])
         dicc['precio'] = float(row[2])
@@ -21,11 +21,12 @@ def leer_camion(archivo_camion):
     return camion
 
 def leer_precios(archivo_precios):
-    precios = csv.reader(open(archivo_precios, 'rt'), delimiter=',')
+    p = csv.reader(open(archivo_precios, 'rt'), delimiter=',')
     precio = []
-    dicc2 = {}
-    for row in precios:
+
+    for row in p:
         if len(row) != 0:
+            dicc2 = {}
             dicc2['nombre'] = str(row[0])
             dicc2['precio'] = float(row[1])
             precio.append(dicc2)
@@ -50,4 +51,4 @@ for s in camion:
     total_camion += s['cajones']*s['precio']
 
 
-print("Costo total del camion: $", total_camion, sep='')
+print("Costo total del camion: $", total_camion, sep = '')
