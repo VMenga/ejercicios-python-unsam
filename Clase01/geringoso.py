@@ -4,9 +4,7 @@ final=""
 palabra = input("Inserte palabra a traducir:")
 for letra in palabra:
     if letra in "AEIOUaeiou":
-        final += letra
-        final += "p"
-        final += letra
+        final += letra + "p" + letra
     else :
         final += letra
 print(final)
