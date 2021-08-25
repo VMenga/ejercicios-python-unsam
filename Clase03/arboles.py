@@ -37,6 +37,7 @@ def leer_parque(nombre_archivo, parque):
             continue
     return lista_arboles
 
+#Hace un set de las especies segun el parque indicado
 def especies(lista_arboles):
     especies = ()
     for row in lista_arboles:
@@ -52,8 +53,36 @@ if len(sys.argv) == 2:
 else:
     nombre_archivo = '../Data/arbolado-en-espacios-verdes.csv'
 
+#Define el parque e imprime la lista de diccionarios
 parque = 'GENERAL PAZ'
 pprint(leer_parque(nombre_archivo, parque))
 lista_arboles = leer_parque(nombre_archivo, parque)
 
+#Imprime la lista de especies
 print(f'las especies son del parque {parque} son ', especies(lista_arboles))
+
+
+'''
+Salida de prueba:  python3 arboles.py '../Data/arbolado-en-espacios-verdes.csv'
+
+
+█████████████████████████████████████
+█████████████████████████████████████
+████ ▄▄▄▄▄ █▀▀ ██▀▀ ▀  ▄▀█ ▄▄▄▄▄ ████
+████ █   █ █▄▀██▀█▄▀▀▄█▄▄█ █   █ ████
+████ █▄▄▄█ █ ▄ █ ▀▀ ▀  ▀██ █▄▄▄█ ████
+████▄▄▄▄▄▄▄█ █ ▀▄█ █▄▀ ▀▄█▄▄▄▄▄▄▄████
+████  ▀▄▀█▄▄█▀█  ▀ █▀▀▀█▀█ ▄▄▀▄▄▀████
+█████▀ ▄▄▄▄  ▀▀  ▀█▀▄▄▀▄▄█▄▀▀▄  █████
+████▀ ▀█▄ ▄█▄▀▄ █▄█▀█ █ ▄ ▄▀█▄█▄▄████
+█████▄▄▀ ▀▄ ▀▄▄ █  ▀   ▀ ▄▀██ ▄ ▄████
+█████ ▄ ▄▄▄ ██ █ ▄██▀▄▀▄▄▄▀ █▀█▄▀████
+████▄█▄█▄▀▄█▀▀▀▄ █▄▀█▀█▀▄▄ ▄███  ████
+████▄██▄█▄▄█   ▀█ ▄▄█▀█▀ ▄▄▄ █ ▀▀████
+████ ▄▄▄▄▄ █▄▄ ██▀▄█▀▄ █ █▄█ ▀▀▄▀████
+████ █   █ █▀ ▀▀ █▀██▄█▀▄▄ ▄ ▀▀▀█████
+████ █▄▄▄█ █▀█▄█ ▀▀█▀ ▄▄▀▄██ ▄▄▀▄████
+████▄▄▄▄▄▄▄█▄██▄▄▄▄▄▄▄▄█▄██▄▄██▄█████
+█████████████████████████████████████
+█████████████████████████████████████
+'''
