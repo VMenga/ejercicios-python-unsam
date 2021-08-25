@@ -59,7 +59,7 @@ pprint(leer_parque(nombre_archivo, parque))
 lista_arboles = leer_parque(nombre_archivo, parque)
 
 #Imprime la lista de especies
-print(f'las especies son del parque {parque} son ', especies(lista_arboles))
+print(f'Las especies son del parque {parque} son ', especies(lista_arboles))
 
 
 '''
@@ -81,9 +81,9 @@ Salida de prueba:  python3 arboles.py '../Data/arbolado-en-espacios-verdes.csv'
   'origen': 'Exótico',
   'tipo_folla': 'Árbol Conífero Perenne',
   'ubicacion': 'LARRALDE, CRISOLOGO, AV. - PAZ, GRAL., AV.- AIZPURUA'}]
-las especies son del parque GENERAL PAZ son  {'v', 'S', 'u', 'Á', ',', 't', 'T', 'q', 'y', 'p', 'é', 'w', ')', 'B', 'j', 'r', 'W', 'ó', 'G', 'L', 'a', 'H', 'P', 'b', 'o', 'i', 'f', 'n', 'A', 'k', 'd', 'h', 'O', 'J', 'l', 'x', 's', 'c', 'C', 'ú', 'e', 'g', 'F', '(', 'á', ' ', 'D', 'M', 'R', 'N', 'E', 'm', 'V', 'í', '-'}
 
-No funciona la ultima funcion
+ Las especies son del parque GENERAL PAZ son  {'Palma de california', 'Washingtonia (Palmera washingtonia)', 'Caqui', 'Fenix', 'Ciprés blanco', 'Ciprés calvo', 'Washingtonia', 'Timbó (Oreja de negro)', 'Ceibo', 'Palmito', 'Ficus', 'Cedro', 'Tuya oriental', 'Tipa blanca', 'No Determinado', 'No Determinable', 'Morera de papel (Moral de China)', 'Jacarandá', 'Chamaecyparis', 'Roble común', 'Níspero japonés', 'Plátano', 'Fresno americano', 'Cedrela', 'Sauce eléctrico', 'Morera negra', 'Acacia negra', 'Cedro del Atlas (Cedro plateado o Cedro atlántico)', 'Arce negundo', 'Álamo negro', 'Macrocarpa (Ciprés de Monterrey o Ciprés de Lambert)', 'Casuarina', 'Visco (Viscote, Arca)', 'Liquidambar', 'Cedro del Himalaya variedad aurea', 'Magnolia', 'Alcanforero', 'Juniperus', 'Ligustro disciplinado (Ligustro variegado)', 'Olmo', 'Fresno (Fresno común)', 'Eucalipto', 'Pino carrasco (Pino de Jerusalén)', 'Cedro de San Juan', 'Libocedro (Calocedro)', 'Árbol del cielo (Ailanto o Árbol de los dioses)', 'Álamo blanco piramidal', 'Bunya-bunya (Araucaria de Bidwill)', 'Roble sedoso (Grevillea)', 'Ciprés', 'Corona de cristo', 'Olmo europeo', 'Laurus', 'Palma Bangalow  (Palma Rey)', 'Ciprés leylandi', 'Paraíso', 'Tilo', 'Roble americano', 'Laurel de jardin (Laurel de flor)', 'Criptomeria (Cedro del Japón)', 'Limpiatubos', 'Tuja', 'Ombú', 'Roble', 'Palo borracho rosado', 'Nogal europeo (Nogal común)', 'Pino', 'Acacia blanca', 'Pindó', 'Cedro del Himalaya', 'Pino del Paraná (Pino de Misiones o Pino de Brasil)', 'Olivo', 'Fotinia', 'Olea', 'Falso Guayabo (Guayaba del Brasil)', 'Morera blanca', 'Ginkgo', 'Pino de las canarias', 'Olivo oloroso', 'Ligustro', 'Lapacho rosado'}
+
 
 █████████████████████████████████████
 █████████████████████████████████████
