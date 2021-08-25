@@ -41,7 +41,8 @@ def leer_parque(nombre_archivo, parque):
 def especies(lista_arboles):
     especies = ()
     for row in lista_arboles:
-        arbol = tuple(str(row['nombre_com']))
+        arbol = ()
+        arbol = tuple(row['nombre_com'])
         especies += arbol
     especies = set(especies)
     return especies
@@ -64,7 +65,26 @@ print(f'las especies son del parque {parque} son ', especies(lista_arboles))
 
 '''
 Salida de prueba:  python3 arboles.py '../Data/arbolado-en-espacios-verdes.csv'
+{'altura_tot': 10,
+  'coord_x': 96001.202845,
+  'coord_y': 107091.71175399999,
+  'diametro': 35,
+  'espacio_ve': 'GENERAL PAZ',
+  'id_arbol': 51729,
+  'id_especie': 342,
+  'inclinacio': 0,
+  'lat': -34.5653342811,
+  'long': -58.5068743702,
+  'nombre_cie': 'Cupressus sp.',
+  'nombre_com': 'Ciprés',
+  'nombre_fam': 'Cupresáceas',
+  'nombre_gen': 'Cupressus',
+  'origen': 'Exótico',
+  'tipo_folla': 'Árbol Conífero Perenne',
+  'ubicacion': 'LARRALDE, CRISOLOGO, AV. - PAZ, GRAL., AV.- AIZPURUA'}]
+las especies son del parque GENERAL PAZ son  {'v', 'S', 'u', 'Á', ',', 't', 'T', 'q', 'y', 'p', 'é', 'w', ')', 'B', 'j', 'r', 'W', 'ó', 'G', 'L', 'a', 'H', 'P', 'b', 'o', 'i', 'f', 'n', 'A', 'k', 'd', 'h', 'O', 'J', 'l', 'x', 's', 'c', 'C', 'ú', 'e', 'g', 'F', '(', 'á', ' ', 'D', 'M', 'R', 'N', 'E', 'm', 'V', 'í', '-'}
 
+No funciona la ultima funcion 
 
 █████████████████████████████████████
 █████████████████████████████████████
