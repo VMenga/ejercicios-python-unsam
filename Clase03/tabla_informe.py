@@ -4,7 +4,12 @@ import csv
 import sys
 
 def hacer_informe(camion, precios):
-    
+    diff = []
+    for rows in camion:
+        lista = []
+        lista = [str(rows['nombre']), int(rows['cajones']), float(rows['precio']), float(precios[rows['nombre']] - rows['precio'])]
+        diff.append(lista)
+    return diff
 
 #Esta funcion crea una lista de diccionarios con el stock
 def leer_camion(archivo_camion):
@@ -45,6 +50,7 @@ else:
 #Programa:
 camion = leer_camion(nombre_archivo)
 precios = leer_precios(archivo_precios)
+informe = hacer_informe(camion, precios)
 total_camion = 0
 total_entrada = 0
 neto = 0
@@ -66,6 +72,13 @@ if neto >= 0:
 else:
     print("Hubo una perdida de : $", round(-neto, 2), sep='')
 
+#Imprimir diferencias
+headers = ('Nombre', 'Cajones', 'Precio', 'Cambio')
+print(f'{headers[0]:>10s}{headers[1]:>10s}{headers[2]:>10s}{headers[3]:>10s}')
+print('---------- ---------- ---------- ----------')
+
+for nombre, cajones, precio, cambio in informe:
+    print(f'{nombre:>10s}{cajones:>10d}{precio:>10.2f}{cambio:>10.2f}')
 
 '''
 Salida de prueba:
@@ -78,6 +91,25 @@ Salida de prueba:
         Costo total del camion: $47671.15
         Total de facturacion: $62986.1
         La ganancia total fue de : $15314.95
+
+>>> camion = leer_camion('../Data/camion.csv')
+>>> precios = leer_precios('../Data/precios.csv')
+>>> hacer_informe(camion, precios)
+['Lima', 100, 32.2, 8.019999999999996, 'Naranja', 50, 91.1, 15.180000000000007, 'Caqui', 150, 103.44, 2.019999999999996, 'Mandarina', 200, 51.23, 29.660000000000004, 'Durazno', 95, 40.37, 33.11000000000001, 'Mandarina', 50, 65.1, 15.790000000000006, 'Naranja', 100, 70.44, 35.84]
+
+python3 tabla_informe.py ../Data/camion.csv ../Data/precios.csv
+Costo total del camion: $47671.15
+Total de facturacion: $62986.1
+La ganancia total fue de : $15314.95
+    Nombre   Cajones    Precio    Cambio
+---------- ---------- ---------- ----------
+      Lima       100     32.20      8.02
+   Naranja        50     91.10     15.18
+     Caqui       150    103.44      2.02
+ Mandarina       200     51.23     29.66
+   Durazno        95     40.37     33.11
+ Mandarina        50     65.10     15.79
+   Naranja       100     70.44     35.84
 
 █████████████████████████████████████
 █████████████████████████████████████
