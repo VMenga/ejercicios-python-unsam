@@ -40,10 +40,9 @@ def leer_parque(nombre_archivo, parque):
 #Hace un set de las especies segun el parque indicado
 def especies(lista_arboles):
     especies = ()
-    for row in lista_arboles:
-        arbol = ()
-        arbol = tuple(row['nombre_com'])
-        especies += arbol
+    for n_fila, fila in enumerate(lista_arboles, start=1):
+        arbol = (fila['nombre_com'],)
+        especies = especies + arbol
     especies = set(especies)
     return especies
 
@@ -84,7 +83,7 @@ Salida de prueba:  python3 arboles.py '../Data/arbolado-en-espacios-verdes.csv'
   'ubicacion': 'LARRALDE, CRISOLOGO, AV. - PAZ, GRAL., AV.- AIZPURUA'}]
 las especies son del parque GENERAL PAZ son  {'v', 'S', 'u', 'Á', ',', 't', 'T', 'q', 'y', 'p', 'é', 'w', ')', 'B', 'j', 'r', 'W', 'ó', 'G', 'L', 'a', 'H', 'P', 'b', 'o', 'i', 'f', 'n', 'A', 'k', 'd', 'h', 'O', 'J', 'l', 'x', 's', 'c', 'C', 'ú', 'e', 'g', 'F', '(', 'á', ' ', 'D', 'M', 'R', 'N', 'E', 'm', 'V', 'í', '-'}
 
-No funciona la ultima funcion 
+No funciona la ultima funcion
 
 █████████████████████████████████████
 █████████████████████████████████████
