@@ -5,7 +5,7 @@ import sys
 from pprint import pprint
 
 def leer_parque(nombre_archivo, parque):
-    arboles = []
+    lista_arboles = []
     f = csv.reader(open(nombre_archivo, 'rt'), delimiter=',')
     encabezados = next(f)
     for n_fila, fila in enumerate(f, start=1):
@@ -30,12 +30,23 @@ def leer_parque(nombre_archivo, parque):
                 dicc['origen'] = str(record['origen'])
                 dicc['coord_x'] = float(record['coord_x'])
                 dicc['coord_y'] = float(record['coord_y'])
-                arboles.append(dicc)
+                lista_arboles.append(dicc)
             except ValueError:
                 print(f'Fila {n_fila}: No pude interpretar: {fila}')
         else:
             continue
-    return arboles
+    return lista_arboles
+
+def especies(lista_arboles):
+    for row in lista_arboles:
+        especies = []
+        if row == lista_arboles['nombre_com']:
+            arbol = lista_arboles['nombre_com']
+            especies.append(arbol)
+        else:
+            continue
+    especies = set(especies)
+    return especies
 
 #Determinar si el programa inicio con argumentos:
 #EJemplo de uso:$ python3 arboles.py ../Data/arbolado-en-espacios-verdes.csv
@@ -46,3 +57,6 @@ else:
 
 parque = 'GENERAL PAZ'
 pprint(leer_parque(nombre_archivo, parque))
+lista_arboles = leer_parque(nombre_archivo, parque)
+
+pprint(lista_arboles)
