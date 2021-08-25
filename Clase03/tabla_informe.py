@@ -3,6 +3,9 @@
 import csv
 import sys
 
+def hacer_informe(camion, precios):
+    
+
 #Esta funcion crea una lista de diccionarios con el stock
 def leer_camion(archivo_camion):
     camion = []
