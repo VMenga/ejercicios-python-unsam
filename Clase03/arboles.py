@@ -38,13 +38,10 @@ def leer_parque(nombre_archivo, parque):
     return lista_arboles
 
 def especies(lista_arboles):
+    especies = ()
     for row in lista_arboles:
-        especies = []
-        if row == lista_arboles['nombre_com']:
-            arbol = lista_arboles['nombre_com']
-            especies.append(arbol)
-        else:
-            continue
+        arbol = tuple(str(row['nombre_com']))
+        especies += arbol
     especies = set(especies)
     return especies
 
@@ -59,4 +56,4 @@ parque = 'GENERAL PAZ'
 pprint(leer_parque(nombre_archivo, parque))
 lista_arboles = leer_parque(nombre_archivo, parque)
 
-pprint(lista_arboles)
+print(f'las especies son del parque {parque} son ', especies(lista_arboles))
